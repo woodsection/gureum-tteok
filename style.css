@@ -118,11 +118,19 @@ ul, ol {
 }
 
 .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     font-size: 20px;
     font-weight: 700;
     color: var(--color-primary-dark);
     text-decoration: none;
     letter-spacing: -0.02em;
+}
+
+.nav-logo-icon {
+    width: 36px;
+    height: 36px;
 }
 
 .nav-logo:hover {
