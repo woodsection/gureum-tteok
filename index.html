@@ -3,300 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- ✏️ 수정: 사이트 제목 -->
     <title>구름떡집 | 전주 수제 맞춤떡 전문</title>
-    <!-- ✏️ 수정: 사이트 설명 -->
-    <meta name="description" content="전주 구름떡집 - 백일떡, 답례떡, 행사떡 등 정성 가득한 수제 맞춤떡을 만듭니다. 카카오톡으로 간편하게 주문하세요.">
-
+    <meta name="description" content="전주 구름떡집 - 백일떡, 답례떡, 행사떡 등 정성 가득한 수제 맞춤떡을 만듭니다.">
     <meta property="og:type" content="website">
     <meta property="og:title" content="구름떡집 | 전주 수제 맞춤떡 전문">
     <meta property="og:description" content="전주 구름떡집 - 정성 가득한 수제 맞춤떡. 카카오톡으로 간편하게 주문하세요.">
-    <!-- ✏️ 수정: 대표 이미지 URL (권장 1200x630px) -->
     <meta property="og:image" content="assets/images/og-image.jpg">
-    <!-- ✏️ 수정: 배포 후 실제 사이트 URL -->
     <meta property="og:url" content="https://woodsection.github.io/gureum-tteok/">
     <meta property="og:locale" content="ko_KR">
-
     <link rel="icon" href="assets/images/logo.svg" type="image/svg+xml">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="header" id="header">
-    <div class="container">
-        <nav class="nav">
-            <a href="#" class="nav-logo">
-                <img src="assets/images/logo.svg" alt="구름떡집" class="nav-logo-icon">
-                <span>구름떡집</span>
-            </a>
-            <button class="menu-toggle" aria-label="메뉴 열기" aria-expanded="false">
-                <span></span><span></span><span></span>
-            </button>
-            <ul class="nav-menu">
-                <li><a href="#about">소개</a></li>
-                <li><a href="#products">대표 상품</a></li>
-                <li><a href="#order">주문 안내</a></li>
-                <li><a href="#gallery">갤러리</a></li>
-                <li><a href="#contact">오시는 길</a></li>
-            </ul>
-        </nav>
+<!-- ① 스플래시: 로고만, 클릭하면 메뉴로 -->
+<div id="splash" class="screen active">
+    <button class="splash-btn" aria-label="사이트 입장">
+        <img src="assets/images/logo.svg" alt="구름떡집" class="splash-logo">
+    </button>
+</div>
+
+<!-- ② 메인 메뉴: 브랜드 컬러 + 세로 텍스트 메뉴 -->
+<div id="menu" class="screen">
+    <div class="menu-top">
+        <img src="assets/images/logo.svg" alt="구름떡집" class="menu-logo">
     </div>
-</header>
+    <nav class="menu-nav">
+        <a href="#" class="menu-item" data-page="about">소개</a>
+        <a href="#" class="menu-item" data-page="products">대표<br>상품</a>
+        <a href="#" class="menu-item" data-page="order">주문<br>안내</a>
+        <a href="#" class="menu-item" data-page="gallery">갤러리</a>
+        <a href="#" class="menu-item" data-page="contact">오시는<br>길</a>
+    </nav>
+</div>
 
-
-<!-- 히어로 -->
-<section class="hero" id="hero">
-    <div class="hero-inner">
-        <img src="assets/images/logo.svg" alt="" class="hero-logo" aria-hidden="true">
-        <!-- ✏️ 수정: 상호명 -->
-        <h1 class="hero-title">구름떡집</h1>
-        <!-- ✏️ 수정: 한 줄 소개 -->
-        <p class="hero-tagline">정성을 다해 빚는 수제 맞춤떡</p>
-        <p class="hero-sub">백일 · 돌 · 답례 · 행사</p>
-        <!-- ✏️ 수정: 카카오톡 채널 링크 -->
-        <a href="https://pf.kakao.com/_YOUR_CHANNEL_ID/chat"
-           class="btn btn-kakao" target="_blank" rel="noopener">카카오톡 문의하기</a>
-    </div>
-    <a href="#about" class="hero-scroll" aria-label="아래로 스크롤">
-        <span></span>
-    </a>
-</section>
-
-
-<!-- 가게 소개 -->
-<section class="section" id="about">
-    <div class="container about-container">
-        <h2 class="section-title">우리 떡집 이야기</h2>
-        <!-- ✏️ 수정: 가게 소개 문구 -->
-        <div class="about-text">
-            <p>
-                <strong>구름떡집</strong>은 전주에서 정성을 다해
-                수제 맞춤떡을 만들고 있습니다.
-            </p>
-            <p>
-                백일, 돌잔치, 답례, 행사 등 특별한 날을 위한 떡을
-                고객님의 일정과 취향에 맞춰 하나하나 정성껏 준비합니다.
-            </p>
-            <p>
-                좋은 재료만을 사용하며, 모든 떡은 <strong>예약 주문제</strong>로
-                운영됩니다. 카카오톡이나 전화로 편하게 문의해 주세요.
-            </p>
+<!-- ③ 소개 -->
+<div id="about" class="screen page">
+    <header class="page-header">
+        <button class="back-btn" data-page="menu" aria-label="메뉴로 돌아가기">&larr;</button>
+        <span class="page-title">소개</span>
+    </header>
+    <div class="page-body">
+        <div class="page-content about-content">
+            <h2>우리 떡집 이야기</h2>
+            <p><strong>구름떡집</strong>은 전주에서 정성을 다해 수제 맞춤떡을 만들고 있습니다.</p>
+            <p>백일, 돌잔치, 답례, 행사 등 특별한 날을 위한 떡을 고객님의 일정과 취향에 맞춰 하나하나 정성껏 준비합니다.</p>
+            <p>좋은 재료만을 사용하며, 모든 떡은 <strong>예약 주문제</strong>로 운영됩니다. 카카오톡이나 전화로 편하게 문의해 주세요.</p>
+            <!-- ✏️ 수정: 카카오톡 채널 링크 -->
+            <a href="https://pf.kakao.com/_YOUR_CHANNEL_ID/chat" class="btn btn-kakao" target="_blank" rel="noopener">카카오톡 문의하기</a>
         </div>
     </div>
-</section>
+</div>
 
-
-<!-- 대표 상품 -->
-<section class="section section-cream" id="products">
-    <div class="container">
-        <h2 class="section-title">대표 상품</h2>
-        <p class="section-sub">가격은 수량·구성에 따라 달라집니다</p>
-
+<!-- ④ 대표 상품 -->
+<div id="products" class="screen page">
+    <header class="page-header">
+        <button class="back-btn" data-page="menu" aria-label="메뉴로 돌아가기">&larr;</button>
+        <span class="page-title">대표 상품</span>
+    </header>
+    <div class="page-body">
+        <p class="page-sub">가격은 수량·구성에 따라 달라집니다</p>
         <div class="product-grid">
             <article class="product-card">
-                <div class="product-image">
-                    <!-- ✏️ 수정: 백일떡 이미지 (권장 정사각형 600x600px) -->
-                    <img src="assets/images/product-baekil.jpg" alt="백일떡·돌떡" loading="lazy">
-                </div>
-                <div class="product-body">
-                    <h3>백일떡 · 돌떡</h3>
-                    <p class="product-desc">수수팥떡, 백설기, 오색송편 등</p>
-                    <p class="product-price">5만원대~</p>
-                </div>
+                <div class="product-image"><img src="assets/images/product-baekil.jpg" alt="백일떡·돌떡" loading="lazy"></div>
+                <div class="product-body"><h3>백일떡 · 돌떡</h3><p>수수팥떡, 백설기 등</p><span class="price">5만원대~</span></div>
             </article>
-
             <article class="product-card">
-                <div class="product-image">
-                    <!-- ✏️ 수정: 답례떡 이미지 -->
-                    <img src="assets/images/product-dapre.jpg" alt="답례떡" loading="lazy">
-                </div>
-                <div class="product-body">
-                    <h3>답례떡</h3>
-                    <p class="product-desc">개별 포장, 스티커 부착 가능</p>
-                    <p class="product-price">2천원대~/개</p>
-                </div>
+                <div class="product-image"><img src="assets/images/product-dapre.jpg" alt="답례떡" loading="lazy"></div>
+                <div class="product-body"><h3>답례떡</h3><p>개별 포장 가능</p><span class="price">2천원대~/개</span></div>
             </article>
-
             <article class="product-card">
-                <div class="product-image">
-                    <!-- ✏️ 수정: 행사떡 이미지 -->
-                    <img src="assets/images/product-haengsa.jpg" alt="행사떡" loading="lazy">
-                </div>
-                <div class="product-body">
-                    <h3>행사떡</h3>
-                    <p class="product-desc">시루떡, 모듬떡, 절편 등</p>
-                    <p class="product-price">구성별 상이</p>
-                </div>
+                <div class="product-image"><img src="assets/images/product-haengsa.jpg" alt="행사떡" loading="lazy"></div>
+                <div class="product-body"><h3>행사떡</h3><p>시루떡, 모듬떡 등</p><span class="price">구성별 상이</span></div>
             </article>
-
             <article class="product-card">
-                <div class="product-image">
-                    <!-- ✏️ 수정: 계절 한정 이미지 -->
-                    <img src="assets/images/product-seasonal.jpg" alt="계절 한정 떡" loading="lazy">
-                </div>
-                <div class="product-body">
-                    <h3>계절 한정</h3>
-                    <p class="product-desc">봄 쑥떡, 가을 밤떡 등</p>
-                    <p class="product-price">시즌별 문의</p>
-                </div>
+                <div class="product-image"><img src="assets/images/product-seasonal.jpg" alt="계절 한정" loading="lazy"></div>
+                <div class="product-body"><h3>계절 한정</h3><p>봄 쑥떡, 가을 밤떡</p><span class="price">시즌별 문의</span></div>
             </article>
         </div>
-
-        <!-- ✏️ 수정: 카카오톡 채널 링크 -->
-        <div class="section-cta">
-            <a href="https://pf.kakao.com/_YOUR_CHANNEL_ID/chat"
-               class="btn btn-green" target="_blank" rel="noopener">상품 문의하기</a>
+        <div class="page-cta">
+            <a href="https://pf.kakao.com/_YOUR_CHANNEL_ID/chat" class="btn btn-green" target="_blank" rel="noopener">상품 문의하기</a>
         </div>
     </div>
-</section>
+</div>
 
-
-<!-- 주문 안내 -->
-<section class="section section-green" id="order">
-    <div class="container">
-        <h2 class="section-title">주문 안내</h2>
-
-        <div class="order-steps">
-            <div class="step">
-                <span class="step-num">01</span>
-                <h3>문의</h3>
-                <p>카카오톡 또는 전화로<br>원하시는 떡과 일정을 알려주세요</p>
-            </div>
-            <div class="step">
-                <span class="step-num">02</span>
-                <h3>상담</h3>
-                <p>용도, 수량, 디자인, 예산 등을<br>함께 상의합니다</p>
-            </div>
-            <div class="step">
-                <span class="step-num">03</span>
-                <h3>제조</h3>
-                <p>주문 확정 후<br>정해진 날짜에 맞춰 만듭니다</p>
-            </div>
-            <div class="step">
-                <span class="step-num">04</span>
-                <h3>수령</h3>
-                <p>매장 픽업 또는<br>배달로 받으실 수 있습니다</p>
-            </div>
+<!-- ⑤ 주문 안내 -->
+<div id="order" class="screen page page-dark">
+    <header class="page-header">
+        <button class="back-btn" data-page="menu" aria-label="메뉴로 돌아가기">&larr;</button>
+        <span class="page-title">주문 안내</span>
+    </header>
+    <div class="page-body">
+        <div class="steps">
+            <div class="step"><span class="step-n">01</span><h3>문의</h3><p>카카오톡 또는 전화로 원하시는 떡과 일정을 알려주세요</p></div>
+            <div class="step"><span class="step-n">02</span><h3>상담</h3><p>용도, 수량, 디자인, 예산 등을 함께 상의합니다</p></div>
+            <div class="step"><span class="step-n">03</span><h3>제조</h3><p>주문 확정 후 정해진 날짜에 맞춰 만듭니다</p></div>
+            <div class="step"><span class="step-n">04</span><h3>수령</h3><p>매장 픽업 또는 배달로 받으실 수 있습니다</p></div>
         </div>
-
-        <div class="order-notes">
-            <!-- ✏️ 수정: 유의사항 -->
-            <ul>
-                <li>주문은 <strong>최소 3일 전</strong>에 문의해 주세요</li>
-                <li>대량 주문(50개 이상)은 <strong>5~7일 전</strong> 권장</li>
-                <li>정확한 가격은 상담 후 안내드립니다</li>
-            </ul>
-        </div>
-
-        <div class="section-cta">
-            <!-- ✏️ 수정: 카카오톡 채널 링크 -->
-            <a href="https://pf.kakao.com/_YOUR_CHANNEL_ID/chat"
-               class="btn btn-kakao" target="_blank" rel="noopener">카카오톡으로 주문 문의</a>
+        <ul class="notes">
+            <li>주문은 <strong>최소 3일 전</strong>에 문의해 주세요</li>
+            <li>대량 주문(50개 이상)은 <strong>5~7일 전</strong> 권장</li>
+            <li>정확한 가격은 상담 후 안내드립니다</li>
+        </ul>
+        <div class="page-cta">
+            <a href="https://pf.kakao.com/_YOUR_CHANNEL_ID/chat" class="btn btn-kakao" target="_blank" rel="noopener">카카오톡으로 주문 문의</a>
         </div>
     </div>
-</section>
+</div>
 
-
-<!-- 갤러리 -->
-<section class="section" id="gallery">
-    <div class="container">
-        <h2 class="section-title">갤러리</h2>
-        <!--
-            ✏️ 이미지 교체: assets/images/ 에 파일을 넣고 src를 변경하세요
-            권장 크기: 800x800px (정사각형)
-            추가/삭제: gallery-item 블록을 복사하거나 삭제하세요
-        -->
+<!-- ⑥ 갤러리 -->
+<div id="gallery" class="screen page">
+    <header class="page-header">
+        <button class="back-btn" data-page="menu" aria-label="메뉴로 돌아가기">&larr;</button>
+        <span class="page-title">갤러리</span>
+    </header>
+    <div class="page-body">
         <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="assets/images/gallery-1.jpg" alt="떡 사진 1" loading="lazy">
-            </div>
-            <div class="gallery-item">
-                <img src="assets/images/gallery-2.jpg" alt="떡 사진 2" loading="lazy">
-            </div>
-            <div class="gallery-item">
-                <img src="assets/images/gallery-3.jpg" alt="떡 사진 3" loading="lazy">
-            </div>
-            <div class="gallery-item">
-                <img src="assets/images/gallery-4.jpg" alt="떡 사진 4" loading="lazy">
-            </div>
-            <div class="gallery-item">
-                <img src="assets/images/gallery-5.jpg" alt="떡 사진 5" loading="lazy">
-            </div>
-            <div class="gallery-item">
-                <img src="assets/images/gallery-6.jpg" alt="떡 사진 6" loading="lazy">
-            </div>
+            <div class="gallery-item"><img src="assets/images/gallery-1.jpg" alt="떡 사진 1" loading="lazy"></div>
+            <div class="gallery-item"><img src="assets/images/gallery-2.jpg" alt="떡 사진 2" loading="lazy"></div>
+            <div class="gallery-item"><img src="assets/images/gallery-3.jpg" alt="떡 사진 3" loading="lazy"></div>
+            <div class="gallery-item"><img src="assets/images/gallery-4.jpg" alt="떡 사진 4" loading="lazy"></div>
+            <div class="gallery-item"><img src="assets/images/gallery-5.jpg" alt="떡 사진 5" loading="lazy"></div>
+            <div class="gallery-item"><img src="assets/images/gallery-6.jpg" alt="떡 사진 6" loading="lazy"></div>
         </div>
     </div>
-</section>
+</div>
 
-
-<!-- 오시는 길 + 문의 -->
-<section class="section section-cream" id="contact">
-    <div class="container">
-        <h2 class="section-title">오시는 길</h2>
-
-        <!-- ✏️ 수정: 지도 주소 — src의 q= 값을 변경하세요 -->
+<!-- ⑦ 오시는 길 -->
+<div id="contact" class="screen page">
+    <header class="page-header">
+        <button class="back-btn" data-page="menu" aria-label="메뉴로 돌아가기">&larr;</button>
+        <span class="page-title">오시는 길</span>
+    </header>
+    <div class="page-body">
         <div class="map-wrap">
-            <iframe
-                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=반월3길+8+남양아파트상가+1동+2층+구름떡집"
-                width="100%" height="300"
-                style="border:0"
-                allowfullscreen loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                title="구름떡집 위치"></iframe>
+            <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=반월3길+8+남양아파트상가+1동+2층+구름떡집"
+                width="100%" height="240" style="border:0" allowfullscreen loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade" title="구름떡집 위치"></iframe>
         </div>
-
-        <div class="contact-card">
-            <div class="contact-info">
-                <div class="info-row">
-                    <span class="info-label">주소</span>
-                    <!-- ✏️ 수정: 주소 -->
-                    <span>반월3길 8 남양아파트상가 1동 2층</span>
-                </div>
-                <div class="info-row">
-                    <span class="info-label">운영</span>
-                    <!-- ✏️ 수정: 운영시간 -->
-                    <span>월~토 9:00–19:00 · 일/공휴일 휴무</span>
-                </div>
-                <div class="info-row">
-                    <span class="info-label">전화</span>
-                    <!-- ✏️ 수정: 전화번호 -->
-                    <span><a href="tel:010-1234-5678">010-1234-5678</a></span>
-                </div>
-                <div class="info-row">
-                    <span class="info-label">이메일</span>
-                    <!-- ✏️ 수정: 이메일 -->
-                    <span><a href="mailto:hello@example.com">hello@example.com</a></span>
-                </div>
-            </div>
-
-            <div class="contact-buttons">
-                <!-- ✏️ 수정: 카카오톡 채널 링크 -->
-                <a href="https://pf.kakao.com/_YOUR_CHANNEL_ID/chat"
-                   class="btn btn-kakao btn-block" target="_blank" rel="noopener">카카오톡 채널 문의</a>
-                <!-- ✏️ 수정: 이메일 -->
-                <a href="mailto:hello@example.com?subject=[구름떡집] 주문 문의&body=안녕하세요, 구름떡집에 문의드립니다.%0A%0A■ 용도:%0A■ 날짜:%0A■ 수량:%0A■ 기타 요청사항:"
-                   class="btn btn-outline-green btn-block">이메일 문의</a>
-                <!-- ✏️ 수정: 네이버 지도 링크 -->
-                <a href="https://naver.me/YOUR_PLACE_ID"
-                   class="btn btn-outline-green btn-block" target="_blank" rel="noopener">네이버 지도에서 보기</a>
-            </div>
+        <div class="contact-info">
+            <div class="info-row"><span class="lbl">주소</span><span>반월3길 8 남양아파트상가 1동 2층</span></div>
+            <div class="info-row"><span class="lbl">운영</span><span>월~토 9:00–19:00 · 일/공휴일 휴무</span></div>
+            <div class="info-row"><span class="lbl">전화</span><span><a href="tel:010-1234-5678">010-1234-5678</a></span></div>
+            <div class="info-row"><span class="lbl">이메일</span><span><a href="mailto:hello@example.com">hello@example.com</a></span></div>
+        </div>
+        <div class="contact-btns">
+            <a href="https://pf.kakao.com/_YOUR_CHANNEL_ID/chat" class="btn btn-kakao btn-block" target="_blank" rel="noopener">카카오톡 채널 문의</a>
+            <a href="mailto:hello@example.com?subject=[구름떡집] 주문 문의&body=안녕하세요, 구름떡집에 문의드립니다.%0A%0A■ 용도:%0A■ 날짜:%0A■ 수량:%0A■ 기타:" class="btn btn-outline-green btn-block">이메일 문의</a>
+            <a href="https://naver.me/YOUR_PLACE_ID" class="btn btn-outline-green btn-block" target="_blank" rel="noopener">네이버 지도에서 보기</a>
+        </div>
+        <div class="contact-footer">
+            <p>@gureum.tteok</p>
+            <p class="small">&copy; 2026 구름떡집 · 표시된 가격은 예시입니다</p>
         </div>
     </div>
-</section>
-
-
-<footer class="footer">
-    <div class="container">
-        <img src="assets/images/logo.svg" alt="구름떡집" class="footer-logo">
-        <p class="footer-name">구름떡집</p>
-        <!-- ✏️ 수정: 인스타그램 링크 -->
-        <p class="footer-social"><a href="https://instagram.com/gureum.tteok" target="_blank" rel="noopener">@gureum.tteok</a></p>
-        <p class="footer-copy">&copy; 2026 구름떡집</p>
-        <p class="footer-note">표시된 가격은 예시이며, 정확한 가격은 문의 시 안내드립니다.</p>
-    </div>
-</footer>
+</div>
 
 <script src="script.js"></script>
 </body>
