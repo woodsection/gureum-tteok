@@ -25,13 +25,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    var hash = location.hash.replace('#', '');
-    if (!hash || !document.getElementById(hash)) {
-        setTimeout(function () {
-            showScreen('menu', true);
-        }, 1200);
-    }
-
     document.querySelectorAll('[data-page]').forEach(function (el) {
         el.addEventListener('click', function (e) {
             e.preventDefault();
@@ -45,6 +38,9 @@ document.addEventListener('DOMContentLoaded', function () {
         history.replaceState({ screen: hash }, '', '#' + hash);
     } else {
         history.replaceState({ screen: 'splash' }, '', location.pathname);
+        setTimeout(function () {
+            showScreen('menu', true);
+        }, 1200);
     }
 
     document.querySelectorAll('img').forEach(function (img) {
