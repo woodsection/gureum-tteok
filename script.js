@@ -25,11 +25,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    var splashBtn = document.querySelector('.splash-btn');
-    if (splashBtn) {
-        splashBtn.addEventListener('click', function () {
+    var hash = location.hash.replace('#', '');
+    if (!hash || !document.getElementById(hash)) {
+        setTimeout(function () {
             showScreen('menu', true);
-        });
+        }, 1200);
     }
 
     document.querySelectorAll('[data-page]').forEach(function (el) {

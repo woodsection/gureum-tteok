@@ -27,9 +27,9 @@ ul,ol{list-style:none}
 .screen.active{display:flex}
 
 #splash{background:var(--cream);align-items:center;justify-content:center}
-.splash-btn{background:none;border:none;cursor:pointer;padding:20px;transition:transform 0.3s}
-.splash-btn:hover{transform:scale(1.05)}
-.splash-logo{width:120px;height:auto}
+.splash-inner{padding:20px}
+.splash-logo{width:120px;height:auto;animation:fadeIn 0.6s ease}
+@keyframes fadeIn{from{opacity:0;transform:scale(0.9)}to{opacity:1;transform:scale(1)}}
 @media(min-width:768px){.splash-logo{width:160px}}
 
 #menu{background:var(--cream);flex-direction:column;align-items:center;padding:48px 20px 48px}
@@ -67,7 +67,7 @@ ul,ol{list-style:none}
 .about-content h2::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:32px;height:3px;background:var(--green);border-radius:2px}
 .about-content p{color:var(--text-light);margin-bottom:16px;line-height:1.9}
 .about-content strong{color:var(--green-dark);font-weight:600}
-.about-content .btn{margin-top:24px}
+.about-btns{display:flex;flex-direction:column;gap:10px;margin-top:28px;max-width:300px;margin-left:auto;margin-right:auto}
 
 .product-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
 .product-card{background:var(--cream);border-radius:var(--radius);overflow:hidden}
