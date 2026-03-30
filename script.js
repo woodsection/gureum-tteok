@@ -39,7 +39,11 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
         history.replaceState({ screen: 'splash' }, '', location.pathname);
         setTimeout(function () {
-            showScreen('menu', true);
+            document.getElementById('splash').classList.remove('active');
+            setTimeout(function () {
+                document.getElementById('menu').classList.add('active');
+                history.pushState({ screen: 'menu' }, '', '#menu');
+            }, 600);
         }, 1200);
     }
 
