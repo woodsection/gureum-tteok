@@ -28,17 +28,20 @@ ul,ol{list-style:none}
 
 #splash{background:var(--cream);align-items:center;justify-content:center;z-index:10}
 .splash-inner{padding:20px}
+.logo-link{display:inline-flex;align-items:center;justify-content:center;text-decoration:none}
+.logo-link:hover{text-decoration:none}
+.logo-link:focus-visible{outline:2px solid var(--green);outline-offset:8px;border-radius:999px}
 .splash-logo{width:120px;height:auto;animation:fadeIn 0.6s ease}
 @keyframes fadeIn{from{opacity:0;transform:scale(0.9)}to{opacity:1;transform:scale(1)}}
 @media(min-width:768px){.splash-logo{width:160px}}
 
-#menu{background:var(--cream);flex-direction:column;align-items:center;padding:48px 20px 48px}
-.menu-top{padding:0 0 24px;flex-shrink:0}
-.menu-logo{width:48px;height:auto;opacity:0.7}
-.menu-nav{flex:1;display:flex;gap:36px;align-items:center;justify-content:center}
-.menu-item{writing-mode:vertical-rl;text-orientation:upright;font-size:22px;font-weight:700;color:var(--green-dark);text-decoration:none;letter-spacing:0.15em;padding:8px 4px;transition:color 0.2s;white-space:nowrap}
+#menu{background:var(--cream);flex-direction:column;align-items:center;padding:clamp(28px,8vh,48px) 16px}
+.menu-top{padding:0 0 clamp(18px,4vh,24px);flex-shrink:0}
+.menu-logo{width:clamp(40px,12vw,48px);height:auto;opacity:0.7}
+.menu-nav{flex:1;display:flex;width:min(100%,420px);gap:clamp(14px,4.5vw,36px);align-items:center;justify-content:space-between}
+.menu-item{writing-mode:vertical-rl;text-orientation:upright;font-size:clamp(18px,5vw,22px);font-weight:700;color:var(--green-dark);text-decoration:none;letter-spacing:clamp(0.08em,0.35vw,0.15em);padding:8px 2px;transition:color 0.2s;white-space:nowrap}
 .menu-item:hover{color:var(--golden);text-decoration:none}
-@media(min-width:768px){#menu{padding:60px 20px 60px}.menu-logo{width:60px}.menu-item{font-size:28px}.menu-nav{gap:56px}}
+@media(min-width:768px){#menu{padding:60px 20px 60px}.menu-logo{width:60px}.menu-item{font-size:28px;letter-spacing:0.15em;padding:8px 4px}.menu-nav{width:auto;gap:56px;justify-content:center}}
 
 .page{background:var(--cream);flex-direction:column}
 .page-dark{background:var(--green-dark);color:var(--cream)}
